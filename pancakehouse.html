@@ -29,7 +29,7 @@
 
       async function getTheMenu() {
         try {
-          let response = await fetch(host + "/lunch");
+          let response = await fetch(host + "/merger" + "/breakfast");
           if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
           }

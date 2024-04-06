@@ -1,11 +1,4 @@
-const mode = 0;
-
-const host_local = 'http://localhost:3000';
-const host_remote = 'let host = "https://diner-pancakehouse-merge-latest-bm4o.onrender.com';
-
-function getHost() {
-    return mode === 0 ? host_local : host_remote;
-}
+let host = "https://diner-pancakehouse-merge-latest-bm4o.onrender.com/merger";
 
 function isLoggedIn() {
     if(localStorage.getItem('token')) {
@@ -61,7 +54,7 @@ async function login(){
         body: JSON.stringify(customer)
     };
     try{
-        let response = await fetch(getHost() + '/signin', request);
+        let response = await fetch(host + '/signin', request);
         if (response.status == 200) {
             alert("The login was successful");
             const token = await response.text();

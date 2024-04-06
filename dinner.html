@@ -23,14 +23,14 @@
     </div>
 
     <script>
-      let host = "https://diner-pancakehouse-merge-latest-bm4o.onrender.com/merger";
+      let host = "https://diner-pancakehouse-merge-latest-bm4o.onrender.com";
       let menuDiv = document.getElementById("menu");
 
       displayTheMenu();
 
       async function getTheMenu() {
         try {
-          let response = await fetch(host + "/lunch");
+          let response = await fetch(host + "/merger" + "/dinner");
           if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
           }
