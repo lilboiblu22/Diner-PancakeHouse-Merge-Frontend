@@ -42,6 +42,7 @@
 
       async function displayTheMenu() {
         let menu = await getTheMenu();
+        console.log(menu);
         for (let menuItem of menu) {
           let div = document.createElement("div");
           div.class = "menu-item";
