@@ -29,9 +29,16 @@
       displayTheMenu();
 
       async function getTheMenu() {
-        let response = await fetch(host + "/lunch");
-        let menu = await response.json();
-        return menu;
+        try {
+          let response = await fetch(host + "/lunch");
+          if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+          }
+          let menu = await response.json();
+          return menu;
+        } catch (error) {
+          console.error('There was a problem with the fetch operation: ' + error.message);
+        }
       }
 
       async function displayTheMenu() {
